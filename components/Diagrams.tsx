@@ -47,9 +47,9 @@ export const SurfaceCodeDiagram: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center p-8 bg-white rounded-xl shadow-sm border border-stone-200 my-8">
-      <h3 className="font-serif text-xl mb-4 text-stone-800">Interactive: Network Anomaly Detection</h3>
+      <h3 className="font-serif text-xl mb-4 text-stone-800">Graph Topology Analysis</h3>
       <p className="text-sm text-stone-500 mb-6 text-center max-w-md">
-        Click the grey <strong>Nodes</strong> to simulate data corruption. Watch the colored <strong>Monitors</strong> flag anomalies based on graph topology.
+        Click the <strong>Nodes</strong> to simulate user interactions. Watch the colored <strong>Clusters</strong> activate to identify content relationships.
       </p>
       
       <div className="relative w-64 h-64 bg-[#F5F4F0] rounded-lg border border-stone-200 p-4 flex flex-wrap justify-between content-between relative">
@@ -94,13 +94,13 @@ export const SurfaceCodeDiagram: React.FC = () => {
       </div>
 
       <div className="mt-6 flex items-center gap-4 text-xs font-mono text-stone-500">
-          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-stone-800"></div> Signal</div>
-          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-sm bg-blue-500"></div> Type A</div>
-          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-sm bg-red-500"></div> Type B</div>
+          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-stone-800"></div> User Tag</div>
+          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-sm bg-blue-500"></div> Group A</div>
+          <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-sm bg-red-500"></div> Group B</div>
       </div>
       
       <div className="mt-4 h-6 text-sm font-serif italic text-stone-600">
-        {errors.length === 0 ? "Network Status: Normal" : `Alert: ${activeStabilizers.length} anomalies detected.`}
+        {errors.length === 0 ? "Network Status: Idle" : `Analysis: ${activeStabilizers.length} relationships detected.`}
       </div>
     </div>
   );
@@ -119,9 +119,9 @@ export const TransformerDecoderDiagram: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center p-8 bg-[#F5F4F0] rounded-xl border border-stone-200 my-8">
-      <h3 className="font-serif text-xl mb-4 text-stone-900">Machine Learning Pipeline</h3>
+      <h3 className="font-serif text-xl mb-4 text-stone-900">Deep Learning Pipeline</h3>
       <p className="text-sm text-stone-600 mb-6 text-center max-w-md">
-        Visualizing a recurrent transformer architecture processing sequential feature data to predict outcomes.
+        Visualizing the architecture used for Mongolian-Llama3 and Stable Diffusion image generation.
       </p>
 
       <div className="relative w-full max-w-lg h-56 bg-white rounded-lg shadow-inner overflow-hidden mb-6 border border-stone-200 flex items-center justify-center gap-8 p-4">
@@ -133,7 +133,7 @@ export const TransformerDecoderDiagram: React.FC = () => {
                     {[...Array(9)].map((_, i) => <div key={i} className={`w-2 h-2 rounded-full ${Math.random() > 0.7 ? 'bg-stone-800' : 'bg-stone-300'}`}></div>)}
                 </div>
             </div>
-            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Features</span>
+            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Input Data</span>
         </div>
 
         {/* Arrows */}
@@ -150,7 +150,7 @@ export const TransformerDecoderDiagram: React.FC = () => {
                     </div>
                 )}
              </div>
-             <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Model</span>
+             <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Transformer</span>
         </div>
 
         {/* Arrows */}
@@ -165,7 +165,7 @@ export const TransformerDecoderDiagram: React.FC = () => {
                     <span className="text-2xl font-serif text-stone-300">...</span>
                 )}
             </div>
-            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Prediction</span>
+            <span className="text-[10px] uppercase font-bold tracking-wider text-stone-500">Output</span>
         </div>
 
       </div>
@@ -196,9 +196,9 @@ export const PerformanceMetricDiagram: React.FC = () => {
     return (
         <div className="flex flex-col md:flex-row gap-8 items-center p-8 bg-stone-900 text-stone-100 rounded-xl my-8 border border-stone-800 shadow-lg">
             <div className="flex-1 min-w-[240px]">
-                <h3 className="font-serif text-xl mb-2 text-nobel-gold">Optimization Results</h3>
+                <h3 className="font-serif text-xl mb-2 text-nobel-gold">Revenue Optimization</h3>
                 <p className="text-stone-400 text-sm mb-4 leading-relaxed">
-                    Comparison of Error Rates (Lower is Better) across different dataset complexities. My optimized models consistently outperform industry baselines.
+                    Comparison of model error rates. Reducing error directly correlated to a <strong>3M yen monthly revenue increase</strong> in my previous role.
                 </p>
                 <div className="flex gap-2 mt-6">
                     {(['A', 'B', 'C'] as const).map((d) => (
@@ -207,7 +207,7 @@ export const PerformanceMetricDiagram: React.FC = () => {
                             onClick={() => setDataset(d)} 
                             className={`px-3 py-1.5 rounded text-sm font-medium transition-all duration-200 border ${dataset === d ? 'bg-nobel-gold text-stone-900 border-nobel-gold' : 'bg-transparent text-stone-400 border-stone-700 hover:border-stone-500 hover:text-stone-200'}`}
                         >
-                            Dataset {d}
+                            Model Ver. {d}
                         </button>
                     ))}
                 </div>
